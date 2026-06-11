@@ -17,6 +17,7 @@ const io = new Server(server, {
 });
 
 app.use('/shared', express.static(path.join(__dirname, 'public', 'shared')));
+app.use('/vendor/three', express.static(path.join(__dirname, 'node_modules', 'three', 'build')));
 app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (_req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
